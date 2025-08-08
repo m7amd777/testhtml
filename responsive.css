@@ -1,0 +1,65 @@
+/* Responsive design for cards */
+@media screen and (max-width: 768px) {
+    .post-container {
+        width: 90%; /* Wider on tablets */
+        padding: 12px;
+    }
+    
+    .cards {
+        gap: 8px; /* Smaller gap */
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+    
+    .cards span {
+        font-size: 13px; /* Slightly smaller text */
+        padding: 5px 8px; /* Reduced padding */
+    }
+    
+    .block2 {
+        padding: 12px;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-container {
+        width: 95%; /* Almost full width on mobile */
+        padding: 10px;
+    }
+    
+    .cards {
+        gap: 6px; /* Even smaller gap */
+        flex-wrap: wrap; /* Ensure wrapping */
+        padding: 8px 0;
+    }
+    
+    .cards span {
+        font-size: 12px; /* Smaller text for mobile */
+        padding: 4px 6px; /* Minimal padding */
+        border-radius: 15px; /* Smaller border radius */
+    }
+    
+    .block2 {
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 6px;
+    }
+    
+    .content {
+        padding: 10px;
+        padding-left: 12px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .cards {
+        flex-direction: column; /* Stack vertically on very small screens */
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .cards span {
+        font-size: 11px;
+        padding: 3px 5px;
+    }
+}

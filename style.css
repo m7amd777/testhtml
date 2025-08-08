@@ -1,0 +1,300 @@
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+
+body {
+    background: #333;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 0;
+}
+/* padding 20 was affecting yhr images*/
+.topnav {
+  overflow: hidden;
+  background-color: #f8f3f3;
+  display: flex;
+  flex-direction: row;
+}
+
+.topnav a {
+  float: right;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.topnav a:hover {
+  background-color: #aa0404;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #333;
+  color: white;
+}
+
+.create-btn {
+  /* margin: 10px 0; */
+  margin-left:25%;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  align-self: center;
+  width: fit-content;
+  display: block;
+  background-color: #aa0404;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: center;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.block1 {
+    align-items: left;
+    display: block;
+    width: 5%;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    position: sticky;
+    top: 20px;
+    z-index: 10;
+}
+.myheader {
+  width:5%;
+}
+
+.post-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width:60%; /* Keep your preferred width */
+    min-width: 300px; 
+    max-width: 600px; 
+    padding: 15px; /* Increased padding for better mobile experience */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.block2 {
+    align-items: center;
+    background: white;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    gap:10px;
+    border-radius:6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+
+
+.cards {
+    width: 100%;
+    padding: 10px 0;
+    color: #aa0404;
+    display: flex;
+    gap: 10px; /* Reduced gap for smaller screens */
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.cards span {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 10px; /* Slightly reduced padding */
+    background: #f8f8f8;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    white-space: nowrap; /* Prevent text wrapping within spans */
+    flex-shrink: 1; /* Allow shrinking if needed */
+    min-width: fit-content; /* Maintain minimum readable width */
+    box-sizing: border-box;
+}
+
+.cards span:first-child {
+    background: #aa0404;
+    color: white;
+}
+
+.content {
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+.content p {
+  text-align: left;
+  color: #666666
+}
+
+
+.hero-image {
+  background-image: url('tekken.jpg'); /* Path to your local image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  color: white;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  justify-items: center;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-family: "Bebas Neue Pro"
+}
+
+
+.side-bar {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 13%;
+  /* position: sticky; */
+  /* top: 20px; */
+  align-self: center;
+  padding: 15px; /* Increased padding for better mobile experience */
+  box-sizing: border-box; /* Include padding in width calculation */
+
+}
+
+
+
+.categories-bar {
+  width:100%;
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  gap:10px;
+  margin: 20px;
+  /* margin-top: 105px; */
+  /* position: sticky; */
+  /* top: 105px; */
+}
+
+.categories-bar h1 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.categories-bar h2 {
+  font-size: 1.6rem;
+  margin: 10px 0;
+  color: #aa0404;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.filters-bar {
+  width:100%;
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  margin-top: 10px;
+  /* position: sticky;
+  top: 105px; */
+}
+
+.filters-bar h1 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.filters-bar h2 {
+  font-size: 1.6rem;
+  margin: 10px 0;
+  color: #aa0404;;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+
+.categories-bar h1:hover {
+  color: #3555e6;
+}
+
+.cards {
+    padding: 10px 0;
+    color: #aa0404;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 15px;
+}
+
+.cards span {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 8px;
+    background: #f8f8f8;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.cards span:first-child {
+    background: #aa0404;
+    color: white;
+}
+
+.content {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.content p {
+  text-align: left;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 15px;
+}
+
+
+
