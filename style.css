@@ -110,37 +110,6 @@ body {
 
 
 
-.cards {
-    width: 100%;
-    padding: 10px 0;
-    color: #aa0404;
-    display: flex;
-    gap: 10px; /* Reduced gap for smaller screens */
-    align-items: center;
-    border-bottom: 2px solid #f0f0f0;
-    margin-bottom: 15px;
-    flex-wrap: wrap; /* Allow wrapping on small screens */
-    box-sizing: border-box; /* Include padding in width calculation */
-}
-
-.cards span {
-    font-size: 14px;
-    font-weight: 600;
-    padding: 6px 10px; /* Slightly reduced padding */
-    background: #f8f8f8;
-    border-radius: 20px;
-    border: 1px solid #e0e0e0;
-    white-space: nowrap; /* Prevent text wrapping within spans */
-    flex-shrink: 1; /* Allow shrinking if needed */
-    min-width: fit-content; /* Maintain minimum readable width */
-    box-sizing: border-box;
-}
-
-.cards span:first-child {
-    background: #aa0404;
-    color: white;
-}
-
 .content {
     background-color: rgb(255, 255, 255);
     padding: 5px;
