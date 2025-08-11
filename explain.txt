@@ -1,3 +1,21 @@
+<div class = "block2" style="display: block;">
+                <div class="cards">
+                    <span>mohamed,</span>
+                    <span>admin</span>
+                    <span>+500 followers</span>
+                </div>
+                <h3>
+                    LFG. Professional Rocket League
+                </h3>
+                <div class="content">
+                    <p> I am currently looki aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa</p>
+                </div>
+
+                <div class="post-meta">
+                    <p>likes 200 comments 200</p>
+                </div>
+            </div>
+
 body {
     background: linear-gradient(135deg, #3555e6 0%, #764ba2 100%);
     margin: 0;

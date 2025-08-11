@@ -101,3 +101,34 @@
     margin: 40px;
     height:300px;
 }
+
+.categories {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.category-item input[type="checkbox"] {
+    transform: scale(1.2);
+    accent-color: #aa0404;
+    margin: 0;
+}
+
+.category-item label {
+    font-weight: 500;
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
