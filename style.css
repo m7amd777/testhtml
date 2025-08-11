@@ -14,15 +14,16 @@ body {
 /* padding 20 was affecting yhr images*/
 .topnav {
   overflow: hidden;
-  background-color: #f8f3f3;
   display: flex;
   flex-direction: row;
+  position:relative;
+  background-color: #f8f3f3;
 }
 
 .topnav a {
+  text-align: center;
   float: right;
   color: #333;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
@@ -40,9 +41,7 @@ body {
 }
 
 .create-btn {
-  /* margin: 10px 0; */
-  margin-left:25%;
-  padding: 12px 25px;
+  padding: 10px 20px;
   border: none;
   border-radius: 8px;
   text-align: center;
@@ -55,7 +54,11 @@ body {
   font-size: 17px;
   cursor: pointer;
   transition: all 0.3s;
-  position: center;
+
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%)
 }
 
 .create-btn:hover {
@@ -167,7 +170,6 @@ body {
   box-sizing: border-box; /* Include padding in width calculation */
 
 }
-
 
 
 .cards {
