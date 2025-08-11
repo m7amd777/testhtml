@@ -13,10 +13,14 @@ body {
 }
 /* padding 20 was affecting yhr images*/
 .topnav {
-  overflow: hidden;
+  top:0;
+  /* overflow: hidden; */
+  z-index: 1000;
+
   display: flex;
   flex-direction: row;
-  position:relative;
+  position: -webkit-sticky;
+  position: sticky;
   background-color: #f8f3f3;
 }
 
@@ -63,7 +67,6 @@ body {
 
 .create-btn:hover {
     background: #f50404;
-    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
 }
 
@@ -157,15 +160,13 @@ body {
 
 
 .side-bar {
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   width: 15%;
   gap:10px;
   /* position: sticky; */
   /* top: 20px; */
-  align-self: center;
  /* Increased padding for better mobile experience */
   box-sizing: border-box; /* Include padding in width calculation */
 
