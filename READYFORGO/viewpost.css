@@ -35,11 +35,14 @@
 
 .post-meta {
     display: block;
+    width:100%;
 }
 
 .post-engagement{
+    width:100%;
     display:flex;
-    gap: 50px;
+    gap: 30px;
+    flex-direction: row;
 }
 
 .post-user {
@@ -67,12 +70,15 @@
     background: #f8f8f8;
     border-radius: 20px;
     border: 1px solid #e0e0e0;
+    flex-wrap:wrap;
+    justify-content: flex-end;
+    max-width:60%;
 }
 
-.category-flairs span:first-child {
+/* .category-flairs span:first-child {
     background: #aa0404;
     color: white;
-}
+} */
 
 .pagination{
     display: flex;
@@ -140,7 +146,7 @@
     flex-direction:row;
     width: 100%;
     padding: 20px;
-    gap:10px;
+    gap:5px;
     border-radius:6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
@@ -369,20 +375,319 @@
     box-shadow: 0 2px 6px rgba(170, 4, 4, 0.3);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .comment-input-container {
-        margin: 15px 0;
+/* Enhanced Responsive Design */
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .post-container {
+        width: 80%;
+        max-width: 1100px;
+    }
+}
+
+/* Desktop and Tablet (768px to 1199px) */
+@media (max-width: 1199px) {
+    .main-content {
         padding: 15px;
     }
     
+    .post-container {
+        width: 80%;
+    }
+}
+
+/* Tablet (768px to 1023px) */
+@media (max-width: 1023px) {
+    .hero-text {
+        font-size: 2rem;
+    }
+    
+    .topnav a {
+        padding: 12px 14px;
+        font-size: 16px;
+    }
+    
+    .post-container {
+        width: 90%;
+    }
+    
+    .focus-post,
+    .comment-block,
+    .comment-input-container {
+        padding: 18px;
+        margin: 15px 0;
+    }
+    
+    .frame h3 {
+        font-size: 1.3rem;
+    }
+    
+    .post-engagement {
+        /* flex-direction: column; */
+        gap: 15px;
+        /* align-items: flex-start; */
+    }
+    
+    .category-flairs {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .category-flairs span {
+        /* font-size: 12px; */
+        padding: 6px 12px;
+    }
+}
+
+/* Mobile Large (481px to 767px) */
+@media (max-width: 767px) {
+    .main-content {
+        padding: 10px;
+    }
+    
+    .post-container {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .hero-text {
+        font-size: 1.8rem;
+        padding: 8px;
+    }
+    
+    .hero-image {
+        height: 250px;
+    }
+    
+    .topnav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .topnav a {
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .focus-post,
+    .comment-block,
+    .comment-input-container {
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+    }
+    
+    .username h2 {
+        font-size: 1rem;
+    }
+    
+    .frame h3 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+    
+    .content p,
+    .content1 p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    .like-dislikes {
+        gap: 15px;
+    }
+    
+    .like-btn,
+    .dislike-btn {
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+    
+    .like-btn .material-icons,
+    .dislike-btn .material-icons {
+        font-size: 16px;
+    }
+    
+    .post-engagement {
+        /* flex-direction: column; */
+        gap: 15px;
+        /* align-items: stretch; */
+    }
+    
+    .category-flairs {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    
+    .category-flairs span {
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+    
+    /* Comment input adjustments */
     #comment-input {
         min-height: 80px;
+        font-size: 14px;
         padding: 12px;
     }
     
     .post-comment-btn {
         width: 100%;
-        align-self: stretch;
+        padding: 15px;
+        font-size: 16px;
+    }
+    
+    .comment-input-section {
+        gap: 12px;
+    }
+}
+
+/* Mobile Small (320px to 480px) */
+@media (max-width: 480px) {
+    .main-content {
+        padding: 5px;
+    }
+    
+    .hero-text {
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+    
+    .hero-image {
+        height: 200px;
+    }
+    .comment-block {
+        flex-direction:column;
+    }
+    
+    .focus-post,
+    .comment-block,
+    .comment-input-container {
+        padding: 12px;
+        margin: 8px 0;
+    }
+    
+    .username h2 {
+        font-size: 0.9rem;
+    }
+    
+    .frame h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .content p,
+    .content1 p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 8px 0;
+    }
+    
+    .like-dislikes {
+        display:flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .like-btn,
+    .dislike-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+        min-width: auto;
+        flex: 1;
+    }
+    
+    .like-btn .material-icons,
+    .dislike-btn .material-icons {
+        font-size: 14px;
+    }
+    
+    .category-flairs span {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+    
+    #comment-input {
+        min-height: 70px;
+        font-size: 13px;
+        padding: 10px;
+    }
+    
+    .post-comment-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Ultra Small Screens (below 320px) */
+@media (max-width: 319px) {
+    .hero-text {
+        font-size: 1.2rem;
+    }
+    
+    .hero-image {
+        height: 150px;
+    }
+    
+    .focus-post,
+    .comment-block,
+    .comment-input-container {
+        padding: 10px;
+    }
+    
+    .like-dislikes {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .like-btn,
+    .dislike-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .category-flairs {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .category-flairs span {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* General responsive utilities */
+.post-container * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure text doesn't overflow */
+.content p,
+.content1 p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Responsive images (if any are added later) */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Touch-friendly button sizing for mobile */
+@media (max-width: 767px) {
+    button {
+        min-height: 44px;
+        min-width: 44px;
     }
 }
