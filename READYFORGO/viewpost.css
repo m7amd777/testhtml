@@ -166,7 +166,12 @@
 }
 
 .comment-user {
+    width:10%;
     min-width: 120px;
+}
+
+.content1 {
+    width:70%;
 }
 
 .card1 {
