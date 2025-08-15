@@ -2,7 +2,7 @@
     background-color: #f8f3f3;
     /* display: flex; */
     align-items: flex-start;
-    width: 40%;
+    width: 70%;
     height: fit-content;
     border-radius: 6px;
     display: flex;
@@ -83,6 +83,7 @@
 .submit-container {
     margin: 20px 0;
     width: 100%;
+    padding:10px;
 }
 
 .title-container h3,
@@ -102,13 +103,17 @@
     height:300px;
 }
 
+.category-container {
+    padding: 10px;
+}
+
 .categories {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 3px;
 }
 
 .category-item {
@@ -130,5 +135,209 @@
     font-size: 16px;
     margin: 0;
     cursor: pointer;
+}
+
+/* ===== RESPONSIVE DESIGN FOR MAKEPOST ===== */
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .main-content {
+        max-width: 1200px;
+        margin: 40px auto;
+    }
+    
+    .post-container {
+        width: 45%;
+        max-width: 600px;
+    }
+}
+
+/* Desktop (1024px to 1199px) */
+@media (max-width: 1199px) {
+    .main-content {
+        margin: 30px;
+    }
+    
+    .post-container {
+        width: 45%;
+    }
+}
+
+/* Tablet Landscape (768px to 1023px) */
+@media (max-width: 1023px) {
+    .main-content {
+        margin: 25px;
+        height: auto;
+    }
+    
+    .post-container {
+        width: 60%;
+        padding: 25px;
+    }
+    
+    .post-container h3 {
+        font-size: 18px;
+    }
+    
+    #title-input {
+        font-size: 16px;
+        height: 40px;
+    }
+    
+    #content-input {
+        min-height: 120px;
+        max-height: 120px;
+        font-size: 14px;
+    }
+    
+    .categories {
+        gap: 15px;
+    }
+    
+    .category-item label {
+        font-size: 15px;
+    }
+}
+
+/* Tablet Portrait (481px to 767px) */
+@media (max-width: 767px) {
+    .main-content {
+        margin: 20px;
+        padding: 10px;
+    }
+    
+    .post-container {
+        width: 90%; /* Changed from 80% */
+        padding: 20px;
+        gap: 12px;
+        max-width: 500px; /* Added max-width for tablets */
+    }
+    
+    .post-container button {
+        padding: 15px 30px;
+        font-size: 16px;
+        width: 100%;
+        max-width: 250px; /* Increased from 200px */
+    }
+}
+
+/* Mobile Large (376px to 480px) */
+@media (max-width: 480px) {
+    .main-content {
+        margin: 10px; /* Reduced from 15px */
+        padding: 5px;
+    }
+    
+    .post-container {
+        width: 98%; /* Changed from 95% */
+        padding: 15px;
+        gap: 10px;
+        max-width: 450px; /* Added max-width */
+    }
+    
+    .post-container button {
+        padding: 15px 20px;
+        font-size: 15px;
+        width: 100%;
+        max-width: 300px; /* Added max-width instead of none */
+    }
+}
+
+/* Mobile Small (320px to 375px) */
+@media (max-width: 375px) {
+    .main-content {
+        margin: 5px; /* Reduced from 10px */
+        padding: 0;
+    }
+    
+    .post-container {
+        width: 100%;
+        padding: 12px;
+        border-radius: 4px;
+        max-width: 375px; /* Added max-width */
+    }
+    
+    .post-container button {
+        padding: 12px 15px;
+        font-size: 14px;
+        margin: 8px 0;
+        max-width: 280px; /* Added max-width */
+    }
+}
+
+/* Ultra Small Screens (below 320px) */
+@media (max-width: 319px) {
+    .main-content {
+        margin: 2px; /* Reduced from 5px */
+        padding: 0;
+    }
+    
+    .post-container {
+        padding: 8px; /* Reduced from 10px */
+        max-width: 315px; /* Added max-width */
+        width: 100%;
+    }
+    
+    .post-container button {
+        padding: 10px 12px;
+        font-size: 13px;
+        max-width: 250px; /* Added max-width */
+    }
+}
+
+/* Additional mobile-specific improvements */
+@media (max-width: 480px) {
+    /* Ensure content doesn't overflow on very small screens */
+    .post-container {
+        min-width: 280px; /* Prevent container from being too narrow */
+    }
+    
+    #title-input,
+    #content-input {
+        font-size: 16px; /* Prevents zoom on iOS */
+        max-width: 100%;
+    }
+    
+    /* Better spacing for very narrow screens */
+    .categories {
+        max-width: 100%;
+        overflow-x: auto; /* Allow horizontal scroll if needed */
+    }
+}
+
+/* Extra small phones (iPhone SE, etc.) */
+@media (max-width: 320px) {
+    .post-container {
+        min-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .main-content {
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 5px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .category-item input[type="checkbox"] {
+        transform: scale(1.1);
+    }
+}
+
+/* Focus states for better accessibility */
+@media (max-width: 767px) {
+    .post-container input:focus,
+    .post-container textarea:focus {
+        border-width: 2px;
+        padding: 11px; /* Adjust for thicker border */
+    }
+    
+    .category-item input[type="checkbox"]:focus {
+        outline: 2px solid #aa0404;
+        outline-offset: 2px;
+    }
 }
 

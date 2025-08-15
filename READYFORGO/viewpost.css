@@ -25,6 +25,9 @@
     color: black;
 }
 
+.frame {
+    width:100%;
+}
 
 .username {
     font-weight: 600;
@@ -169,6 +172,7 @@
     width:10%;
     min-width: 120px;
 }
+
 
 .content1 {
     width:70%;
@@ -431,6 +435,9 @@
     .frame h3 {
         font-size: 1.3rem;
     }
+
+
+    
     
     .post-engagement {
         /* flex-direction: column; */
