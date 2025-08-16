@@ -70,7 +70,7 @@
 }
 
 .page-btn {
-    width:36px;
+    width:fit-content;
     height:36px;
     border: 1px solid #ddd;
     background: white;
@@ -80,6 +80,7 @@
     cursor: pointer;
     font-size: 14px;
     border-radius: 4px;
+    padding:10px;
 }
 
  .page-btn.active {
@@ -88,8 +89,26 @@
     border-color: #333;
 }
 
-.page-btn:hover:not(.active) {
+.page-btn:hover {
     background: #f8f9fa;
+}
+
+.page-current {
+    width:fit-content;
+    height:36px;
+    border: 1px solid #e0e0e0;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    padding:10px;
+}
+
+.page-current h3 {
+    color:#aa0404;
 }
 
 
