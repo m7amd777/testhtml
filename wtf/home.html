@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekken Gaming Forum</title>
+    <link rel="stylesheet" href="/static/pagestyle.css">
+    <link rel="stylesheet" href="/static/pagestyle2.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero-image">
+        <h1 class="hero-text"> Forum</h1>
+    </div>
+
+    <nav class="topnav">
+        <a class="active" href="/home">Home</a>
+        {{if .IsGuest}}
+          <a href="/login">Login</a>
+        {{else}}
+          <a href="/logout">Logout</a>
+        {{end}}
+        <a href="/welcome"> Welcome</a>
+        <button class="create-btn" onclick="window.location.href='/create-post'">Add Post</button>
+    </nav>
+
+    <div class="main-content">
+        <div class = "post-container">
+            <div class="pagination">
+                {{if gt .CurrentPage 1}}
+                    <div class="page-btn" onclick="window.location.href='/home?currentpage={{add .CurrentPage -1}}'"><h3>Previous</h3></div>
+                {{else}}
+                    <div class="page-btn page-btn-disabled"><h3>Previous</h3></div>
+                {{end}}
+                <div class="page-current"><h3>{{.CurrentPage}}</h3></div>
+                {{if lt .CurrentPage .AvailablePages}}
+                    <div class="page-btn" onclick="window.location.href='/home?currentpage={{add .CurrentPage 1}}'"><h3>Next</h3></div>
+                {{else}}
+                    <div class="page-btn page-btn-disabled"><h3>Next</h3></div>
+                {{end}}
+            </div>
+
+
+        {{if .Posts}}
+            {{range .Posts}}
+
+            <div class = "block3">
+                <div class="frame">
+                    <div class="post-user">
+                        <div class="username"><h3>@{{.Username}}</h3></div>
+                    </div>
+                
+                    <a href="/post/{{.ID}}" style="text-decoration:none; color:black;"><h3>{{.Title}}</h3></a>
+                    <div class="content">
+                        
+                        <p>
+                            {{if gt (len .Content) 200}}
+                                {{slice .Content 0 200}}...
+                            {{else}}
+                                {{.Content}}
+                            {{end}}
+                        </p>
+                    </div>
+                    <div class="post-meta">
+                        <div class="category-flairs">
+                            <span>General</span>
+                            <span>Gaming</span>
+                            <span>Music</span>
+                        </div>
+
+                        <div class="post-engagement">
+
+                            <div class = "like-dislikes">
+                                <form method="POST" action="/like">
+                                    <input type="hidden" name="post_id" value="{{.ID}}">
+                                    <button class = "like-btn">
+                                        <span class="material-icons">thumb_up</span>
+                                        <span>{{.LikeCount}}</span>
+                                    </button>
+                                </form>
+                                <!--DO THE DISLIKE HANDLER MAN-->
+                                <button class = "dislike-btn">
+                                    <span class="material-icons">thumb_down</span>
+                                    <span>3</span>
+                                </button>
+                            </div>
+
+                            <div class="comments">
+                                <button class = "comment-btn">
+                                    <span class="material-icons">comment</span>
+                                    <span> {{.CommentCount}}</span>
+                                </button>
+                            </div>
+
+                            <div class="date">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+        {{else}}
+            <p>No Posts Available</p>
+            {{end}}
+
+
+
+        </div>
+
+        <aside class="side-bar">
+            <div class="categories-bar2">
+                <h2>Game Categories</h2>
+                <h1>🥊 Tekken 8</h1>
+                <h1>🎮 Call of Duty</h1>
+                <h1>🔫 Rainbow Six</h1>
+                <h1>⚽ FIFA 24</h1>
+                <h1>🧱 Minecraft</h1>
+            </div>
+            <div class="filters-bar2">
+                <h2>View Your:</h2>
+                <a href="/posts?user_posts=my_posts" style="text-decoration:none;"><h1>Created Posts</h1></a>
+                <a href="/posts?user_posts=liked"  style="text-decoration:none;"><h1>Liked Posts</h1></a>
+            </div>
+        </aside>
+    </div>
+    </body>
+</html>
