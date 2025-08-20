@@ -1,3 +1,6 @@
+@font-face { font-family: tekk; src: url('tarrgetexpandital.ttf'); } 
+@font-face { font-family: tekk; font-weight: bold; src: url('tarrgetexpandital.ttf');}
+
 html, body {
   overflow-x: hidden;
   max-width: 100vw;
@@ -528,6 +531,7 @@ body:has(#sidebar-toggle:checked) .side-bar { transform: translateX(0); }
         max-width: 1200px;
         margin: 0 auto;
         gap: 30px;
+        padding:20px;
     }
     
     .post-container {
