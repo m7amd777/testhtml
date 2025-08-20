@@ -95,11 +95,15 @@ body {
 }
 
 .main-content {
-    flex:1;
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 90px); /* Adjust for navbar/hero height */
     width: 100%;
     max-width: 100vw;
-    padding: 90px 20px 20px;
+    padding: 0 20px 20px;
     transition: margin-right 0.3s ease;
+    gap: 30px;
+    box-sizing: border-box;
 }
 
 /* .block1 {
@@ -118,27 +122,21 @@ body {
 } */
 
 .post-container {
+    flex: 1 1 0;
     max-width: 900px;
-    margin: 0 auto;
-    /* align-self: center; */
-    align-items: center;
-    justify-content: center;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    /* width:50%; */
-    /* min-width: 300px;  */
-    padding: 15px; /* Increased padding for better mobile experience */
-    box-sizing: border-box; /* Include padding in width calculation */
-
-
-    height:calc(100vh -130px);
-    overflow-y:auto;
-    overflow-x: hidden;
+    margin: 0 auto;
+    padding: 25px;
+    box-sizing: border-box;
     backdrop-filter: blur(20px);
     border-radius: 15px;
-    padding: 25px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(233, 69, 96, 0.2);
+    align-items:center;
 
 }
 
@@ -152,12 +150,12 @@ body {
 }
 
 .post-container::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #e94560, #ffc107);
+    background: linear-gradient(135deg, #aa0404, #e94560);
     border-radius: 5px;
 }
 
 .post-container::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #ffc107, #e94560);
+    background: linear-gradient(135deg, #aa0404, #e94560);
 }
 
 
@@ -622,14 +620,14 @@ body:has(#sidebar-toggle:checked) .side-bar { transform: translateX(0); }
         order: 1;
     }
     
-    .side-bar {
+    /* .side-bar {
         width: 100%;
         order: 2;
         flex-direction: row;
         gap: 15px;
         position: static;
         padding: 15px;
-    }
+    } */
     
     .categories-bar2,
     .filters-bar2 {
@@ -746,12 +744,12 @@ body:has(#sidebar-toggle:checked) .side-bar { transform: translateX(0); }
         text-align: center;
     }
     
-    .side-bar {
+    /* .side-bar {
         flex-direction: column;
         gap: 10px;
         width: 100%;
         padding: 15px;
-    }
+    } */
     
     .categories-bar2,
     .filters-bar2 {
@@ -783,8 +781,9 @@ body:has(#sidebar-toggle:checked) .side-bar { transform: translateX(0); }
     }
     
     .cards span {
-        font-size: 12px;
-        padding: 5px 8px;
+        width: 100%;
+        text-align: center;
+        margin: 2px 0;
     }
     
     .like-dislikes {
