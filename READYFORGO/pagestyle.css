@@ -11,16 +11,40 @@ body {
     min-height: 100vh;
     padding: 0;
 }
+body::before {
+    content: "";
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vw;
+    z-index:0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    pointer-events: none;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+body {
+    background-image: url('tekken8.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 /* padding 20 was affecting yhr images*/
 .topnav {
   top:0;
   /* overflow: hidden; */
   z-index: 1000;
+  position: relative; /* Make navbar a positioning context */
 
   display: flex;
   flex-direction: row;
-  position: -webkit-sticky;
-  position: sticky;
+  align-items: center;
   background-color: #f8f3f3;
 }
 
@@ -71,17 +95,14 @@ body {
 }
 
 .main-content {
+    flex:1;
     width: 100%;
     max-width: 100vw;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px;
+    padding: 90px 20px 20px;
+    transition: margin-right 0.3s ease;
 }
 
-.block1 {
+/* .block1 {
     align-items: left;
     display: block;
     width: 5%;
@@ -94,9 +115,12 @@ body {
 }
 .myheader {
   width:5%;
-}
+} */
 
 .post-container {
+    max-width: 900px;
+    margin: 0 auto;
+    /* align-self: center; */
     align-items: center;
     justify-content: center;
     display: flex;
@@ -135,6 +159,7 @@ body {
 }
 
 
+
 .hero-image {
   background-image: url('tekken8.jpeg'); /* Path to your local image */
   background-size: cover;
@@ -159,19 +184,60 @@ body {
 }
 
 
-.side-bar {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  width: 15%;
-  gap:10px;
-  /* position: sticky; */
-  /* top: 20px; */
- /* Increased padding for better mobile experience */
-  box-sizing: border-box; /* Include padding in width calculation */
 
+.sidebar-toggle-label {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Distance from right edge of navbar */
+    transform: translateY(-50%);
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: #f8f3f3;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 24px;
 }
 
+.side-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 320px;
+  background: #fff;
+  box-shadow: -2px 0 12px rgba(0,0,0,0.08);
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  z-index: 999;
+  padding: 90px 20px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Show sidebar when toggle is checked
+.sidebar-toggle:checked ~ .side-bar {
+    transform: translateX(0);
+} */
+
+
+/* .body:has(#sidebar-toggle:checked) .side-bar {
+    transform: translateX(0);
+} */
+/* 
+.body:has(#sidebar-toggle:checked) .sidebar-toggle-label {
+    background-color: red;
+} */
+
+body:has(#sidebar-toggle:checked) .side-bar { transform: translateX(0); }
 
 .cards {
     padding: 10px 0;
