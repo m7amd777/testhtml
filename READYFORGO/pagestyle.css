@@ -777,7 +777,7 @@ body:has(#sidebar-toggle:checked) .side-bar { transform: translateX(0); }
     }
     
     .side-bar {
-       top:10%;
+       top:15%;
     }
     
     .categories-bar2,
@@ -931,6 +931,9 @@ body:has(#sidebar-toggle:checked) .side-bar { transform: translateX(0); }
         padding: 12px;
     }
     
+    .side-bar{
+
+    }
     .categories-bar2 h2,
     .filters-bar2 h2 {
         font-size: 1rem;
